@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { handleInitialData } from "../actions/shared";
 import Dashboard from "./Dashboard";
+import LoadingBar from "react-redux-loading";
 
 // when the component mounts we want to dispatch the invokation of our
 // handleInitialData action creator. In order to get access to dispatch we need to
@@ -14,7 +15,13 @@ class App extends Component {
   // we only want to render Dashboard once the data from handleInitiaData invokation is finished
   // if authedUser is true we render null/nothing else we render the dashboard
   render() {
-    return <div>{this.props.loading === true ? null : <Dashboard />}</div>;
+    
+    return (
+    <div>
+    <LoadingBar />
+    {this.props.loading === true ? null : <Dashboard />}
+    </div>
+    )
   }
 }
 

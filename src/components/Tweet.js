@@ -29,7 +29,6 @@ class Tweet extends Component {
       hasLiked,
       likes,
       replies,
-      id,
       parent,
     } = tweet;
     // console.log(this.props);

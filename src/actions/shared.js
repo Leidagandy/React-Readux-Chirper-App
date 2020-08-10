@@ -2,12 +2,14 @@ import { getInitialData } from "../utils/api";
 import { receiveUsers } from "../actions/users";
 import { receiveTweets } from "../actions/tweets";
 import { setAuthedUser } from "../actions/authedUser";
+import { showLoading, hideLoading } from "react-redux-loading"
 
 const AUTHED_ID = "tylermcginnis";
 
 export function handleInitialData() {
   // this function will use Redux Thunk pattern
   return (dispatch) => {
+    dispatch(showLoading())
     // we want to make an asychronous request inside of this function
     return getInitialData() // we call getInitialData that will return us a promise
       .then(({ users, tweets }) => {
@@ -17,6 +19,7 @@ export function handleInitialData() {
         dispatch(receiveUsers(users));
         dispatch(receiveTweets(tweets));
         dispatch(setAuthedUser(AUTHED_ID));
+        dispatch(hideLoading())
       });
   };
 }
