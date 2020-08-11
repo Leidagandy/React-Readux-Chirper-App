@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { handleInitialData } from "../actions/shared";
 import Dashboard from "./Dashboard";
 import LoadingBar from "react-redux-loading";
+import NewTweet from "./NewTweet"
 
 // when the component mounts we want to dispatch the invokation of our
 // handleInitialData action creator. In order to get access to dispatch we need to
@@ -19,7 +20,7 @@ class App extends Component {
     return (
     <div>
     <LoadingBar />
-    {this.props.loading === true ? null : <Dashboard />}
+    {this.props.loading === true ? null : <NewTweet />}
     </div>
     )
   }
