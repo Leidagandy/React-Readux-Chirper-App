@@ -55,7 +55,7 @@ dispatch(handleToggleTweet({
               Replying to @{parent.author}
             </button>
           )}
-          <p>text</p>
+          <p>{text}</p>
           <div className="tweet-icons">
             <TiArrowBackOutline className="tweet-icon" />
             <span>{replies !== 0 && replies}</span>
