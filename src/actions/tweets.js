@@ -1,7 +1,7 @@
 import { saveLikeToggle } from "../utils/api"
 
 export const RECEIVE_TWEETS = "RECEIVE_TWEETS"
-export  const TOGGLE_TWEET = "TOGGLE_TWEET"
+export const TOGGLE_TWEET = "TOGGLE_TWEET"
 
 // receiveTweets action creator
 
@@ -31,7 +31,5 @@ export function handleToggleTweet (info) {
             dispatch(toggleTweet(info))
             alert("There was an error liking the tweet. Please try again")
         })
-
-
     }
 }
